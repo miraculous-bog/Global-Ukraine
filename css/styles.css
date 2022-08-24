@@ -245,7 +245,6 @@ body {
 
 @media (max-width: 480px) {
   .fake-btn {
-    display: block;
     margin: 40px auto; } }
 
 .main-button:hover {
