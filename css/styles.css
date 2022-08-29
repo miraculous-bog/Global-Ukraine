@@ -116,6 +116,9 @@ body {
   border-radius: .3rem;
   outline: 0; }
 
+.modal-content p {
+  text-align: center; }
+
 @media (min-width: 768px) {
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -691,4 +694,5 @@ body {
 .footer p {
   border-top: 5px solid #ffcb05;
   width: 80%;
-  padding: 20px 0; }
+  padding: 20px 0;
+  line-height: 1.2em; }

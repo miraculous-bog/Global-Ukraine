@@ -1,5 +1,3 @@
-const allowedNameCountryUa = ['Австрія', 'Бельгія', 'Болгарія', 'Хорватія', 'Кіпр', 'Чехія', 'Данія', 'Естонія', 'Фінляндія', 'Франція', ' Німеччина', 'Греція', 'Угорщина', 'Ірландія', 'Італія', 'Латвія', 'Литва', 'Люксембург', 'Мальта', 'Нідерланди', 'Польща', 'Португалія', 'Румунія', 'Словаччина', 'Словенія', 'Іспанія', 'Швеція', 'Україна', 'Ісландія', 'Ліхтенштейн', 'Норвегія'];
-const allowedNameCountryEn = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Ukraine', 'Sceland', 'Liechtenstein', 'Norway'];
 
 const allowedNameCountry = [{ ua: 'Австрія', en: 'Austria' }, { ua: 'Бельгія', en: 'Belgium' }, { ua: 'Болгарія', en: 'Bulgaria' }, { ua: 'Хорватія', en: 'Croatia' }, { ua: 'Кіпр', en: 'Cyprus' }, { ua: 'Чехія', en: 'Czech Republic' }, { ua: 'Данія', en: 'Denmark' }, { ua: 'Естонія', en: 'Estonia' }, { ua: 'Фінляндія', en: 'Finland' }, { ua: 'Франція', en: 'France' }, { ua: 'Німеччина', en: 'Germany' }, { ua: 'Греція', en: 'Greece' }, { ua: 'Угорщина', en: 'Hungary' }, { ua: 'Ірландія', en: 'Ireland' }, { ua: 'Італія', en: 'Italy' }, { ua: 'Латвія', en: 'Latvia' }, { ua: 'Литва', en: 'Lithuania' }, { ua: 'Люксембург', en: 'Luxembourg' }, { ua: 'Мальта', en: 'Malta' }, { ua: 'Нідерланди', en: 'Netherlands' }, { ua: 'Польща', en: 'Poland' }, { ua: 'Португалія', en: 'Portugal' }, { ua: 'Румунія', en: 'Romania' }, { ua: 'Словаччина', en: 'Slovakia' }, { ua: 'Словенія', en: 'Slovenia' }, { ua: 'Іспанія', en: 'Spain' }, { ua: 'Швеція', en: 'Sweden' }, { ua: 'Україна', en: 'Ukraine' }, { ua: 'Ісландія', en: 'Sceland' }, { ua: 'Ліхтенштейн', en: 'Liechtenstein' }, { ua: 'Норвегія', en: 'Norway' }];
 const DefaultValueSelectUa = 'Вибрати країну...';
@@ -35,8 +33,8 @@ const translateModal = {
 		en: 'Your data has been sent successfully!',
 	},
 	successSecondTitle: {
-		ua: 'Очікуйте відповіді...',
-		en: 'Wait for the answer...',
+		ua: 'Ми вам повідомимо, коли ви зможете замовити картку...',
+		en: 'We will let you know when you can order the card...',
 	},
 	successATitle: {
 		ua: 'Завершити',
@@ -57,7 +55,15 @@ const translateModal = {
 }
 refs.selectCustomTrigger.innerText = DefaultValueSelectLang;
 const getSelectMurcup = () => {
-	const arrMurcupSelectItem = hash === 'ua' ? allowedNameCountry.map(item => `<div class="selectCustom-option">${item.ua}</div>`) : allowedNameCountry.map(item => `<div class="selectCustom-option">${item.en}</div>`);
+	const customSortedFn = (a, b) => {
+		let nameA = a[`${hash}`].toLowerCase();
+		let nameB = b[`${hash}`].toLowerCase();
+		if (nameA < nameB) return -1;
+		if (nameA > nameB) return 1;
+		return 0;
+	}
+	const arrMurcupSelectItem = hash === 'ua' ? allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.ua}</div>`) : allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.en}</div>`);
+	console.log(arrMurcupSelectItem);
 	return arrMurcupSelectItem.join("");
 }
 refs.selectCustomOptions.innerHTML = getSelectMurcup();
@@ -147,6 +153,13 @@ const toggleLoader = (isWork) => {
 		refs.formButton.style.display = 'block';
 	}
 }
+const cleanInputs = (form) => {
+	form[0].value = '';
+	form[1].value = '';
+	form[2].checked = false;
+	form[3].checked = false;
+	refs.selectCustomTrigger.innerText = DefaultValueSelectLang;
+}
 const formHandler = (e) => {
 	e.preventDefault();
 	const nameElement = document.querySelector('#name').querySelector('.error');
@@ -195,7 +208,10 @@ const formHandler = (e) => {
 				.then(response => response.json())
 				.then(post => successWindowOpen(post))
 				.catch(error => errorWindowOpen(error))
-				.finally(() => toggleLoader(false));;
+				.finally(() => {
+					toggleLoader(false)
+					cleanInputs(element);
+				});;
 		} catch (e) {
 			errorWindowOpen(error);
 		}

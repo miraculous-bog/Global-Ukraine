@@ -60,16 +60,16 @@ const langArr = {
 		"en": "Enter the data!",
 	},
 	"checkbox-first": {
-		"ua": "Індивідуальний (фізособа)",
-		"en": "Individual ",
+		"ua": "Індивідуальний рахунок (фізособа)",
+		"en": "Individual account",
 	},
 	"checkbox-second": {
-		"ua": "Корпоративний (ФОП)",
-		"en": "Corporative (PE)",
+		"ua": "Корпоративний рахунок (ФОП)",
+		"en": "Corporate account ( FOP|PE)",
 	},
 	"footer": {
-		"ua": "Платіжні рахунки та дебетові картки Visa випускаються Global Ukraine у партнерстві з LinkCy Payment Service Provider UAB, яка є Агентом Установи Електронних Грошей (LB001994), уповноваженою Банком Литви здійснювати емісію електронних  гроші та відповідні платіжні послуги.",
-		"en": "Payment accounts and Visa debit cards are issued by Global Ukraine in partnership with LinkCy Payment Service Provider UAB which is an Agent of an Electronic Money Institution (LB001994), authorized by the Bank of Lithuania for the issuing of electronic money and provision of the related payment services.",
+		"ua": "Платіжні рахунки та дебетові картки Visa випускаються Global Ukraine у партнерстві з LinkCy Payment Service Provider UAB, яка є Агентом Установи Електронних Грошей (LB001994), уповноваженою Банком Литви <br>здійснювати емісію електронних  гроші та відповідні платіжні послуги.",
+		"en": "Payment accounts and Visa debit cards are issued by Global Ukraine in partnership with LinkCy Payment Service Provider UAB which is an Agent of an Electronic Money Institution (LB001994), authorized by the Bank of Lithuania <br>for the issuing of electronic money and provision of the related payment services.",
 	},
 }
 
