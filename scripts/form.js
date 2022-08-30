@@ -224,7 +224,7 @@ const formHandler = (e) => {
 				'Accept': 'application/json, text/plain, */*',
 				'Content-type': 'application/json'
 			},
-			body: JSON.stringify({ captcha: document.querySelector("#recaptcha-token").getAttribute("value") }),
+			body: JSON.stringify({ captcha: document.querySelector("#g-recaptcha-response").value }),
 		}).then(res => res.json()).then(data => console.log(data))
 	}
 }
