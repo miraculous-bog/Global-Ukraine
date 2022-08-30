@@ -224,9 +224,8 @@ const formHandler = (e) => {
 				'Accept': 'application/json, text/plain, */*',
 				'Content-type': 'application/json'
 			},
-			body: JSON.stringify({ captcha: document.querySelector("#g-recaptcha-response").value }),
+			body: JSON.stringify({ captcha: document.querySelector("#recaptcha-token").value }),
 		}).then(res => res.json()).then(data => console.log(data))
 	}
 }
-
 refs.form.addEventListener('submit', formHandler);
