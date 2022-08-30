@@ -218,7 +218,7 @@ const formHandler = (e) => {
 	}
 	if (!msgErrorName && !msgErrorCountry && !msgErrorCheckbox) {
 		toggleLoader(true);
-		fetch('https://global-ukraine-card.herokuapp.com/captcha', {
+		fetch('http://localhost:3000/captcha', {
 			method: 'POST',
 			header: {
 				'Accept': 'application/json, text/plain, */*',
