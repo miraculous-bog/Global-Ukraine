@@ -78,7 +78,8 @@ const extractData = (formElement) => {
 
 	const checkboxFirst = ['Індивідуальний (фізособа)', formElement[2].checked];
 	const checkboxSecond = [' Корпоративний (ФОП)', formElement[3].checked];
-	return { name, email, country, checkboxFirst, checkboxSecond };
+	const captcha = document.querySelector("#g-recaptcha-response").value;
+	return { name, email, country, checkboxFirst, checkboxSecond, captcha };
 }
 
 const verifyName = (nameStr) => {
@@ -99,6 +100,10 @@ const verifyCountry = () => {
 }
 const verifyCheckbox = (checkboxes) => {
 	if (checkboxes.indexOf(true) === -1) return hash === 'ua' ? 'Виберіть хоча б один із запропонованих варіантів' : 'Choose at least one of the proposed options';
+	return false;
+}
+const verifyCaptcha = (captchaValue) => {
+	if (!captchaValue) return hash === 'ua' ? 'Підтвердіть Каптчу' : 'Check the CAPTCHA';
 	return false;
 }
 const cleanErrors = (elementsToClean) => elementsToClean.forEach(item => item.innerText = '');
@@ -176,7 +181,7 @@ const fetchPostData = (postToAdd) => {
 			.finally(() => {
 				toggleLoader(false)
 				cleanInputs(element);
-			});;
+			});
 	} catch (e) {
 		errorWindowOpen(error);
 	}
@@ -187,8 +192,8 @@ const formHandler = (e) => {
 	const emailElement = document.querySelector('#email').querySelector('.error');
 	const countryElement = document.querySelector('#country').querySelector('.error');
 	const checkboxElement = document.querySelector('#checkbox').querySelector('.error');
-
-	cleanErrors([nameElement, emailElement, countryElement, checkboxElement]);
+	const captchaElement = document.querySelector('#captcha-container-custom-go').querySelector('.error');
+	cleanErrors([nameElement, emailElement, countryElement, checkboxElement, captchaElement]);
 
 	const element = e.currentTarget;
 	console.dir(e.currentTarget);
@@ -197,12 +202,13 @@ const formHandler = (e) => {
 	const msgErrorName = verifyName(data.name);
 	const msgErrorCountry = verifyCountry(data.country);
 	const msgErrorCheckbox = verifyCheckbox([data.checkboxFirst[1], data.checkboxSecond[1]]);
-
+	const msgErrorCaptcha = verifyCaptcha(data.captcha);
 
 
 	msgErrorName ? nameElement.innerText = msgErrorName : null;
 	msgErrorCountry ? countryElement.innerText = msgErrorCountry : null;
 	msgErrorCheckbox ? checkboxElement.innerText = msgErrorCheckbox : null;
+	msgErrorCaptcha ? captchaElement.innerText = msgErrorCheckbox : null;
 	const accountArr = [data.checkboxFirst, data.checkboxSecond];
 	let accountStr = accountArr.filter(item => item[1] === true);
 
@@ -218,14 +224,22 @@ const formHandler = (e) => {
 	}
 	if (!msgErrorName && !msgErrorCountry && !msgErrorCheckbox) {
 		toggleLoader(true);
-		fetch('http://localhost:3000/captcha', {
+
+		const captchaObj = { captcha: data.captcha }
+		fetch('https://global-ukraine-card.herokuapp.com/captcha/', {
 			method: 'POST',
-			header: {
-				'Accept': 'application/json, text/plain, */*',
-				'Content-type': 'application/json'
+			body: JSON.stringify(captchaObj),
+			headers: {
+				'Content-Type': 'application/json; charset=UTF-8',
 			},
-			body: JSON.stringify({ captcha: document.querySelector("#g-recaptcha-response").value }),
-		}).then(res => res.json()).then(data => console.log(data))
+		})
+			.then(response => response.json())
+			.then(post => {
+				post.success ? fetchPostData(postToAdd) : errorWindowOpen(post.msg);
+			}).catch(error => errorWindowOpen(error)).finally(() => {
+				toggleLoader(false)
+				cleanInputs(element);
+			});
 	}
 }
 refs.form.addEventListener('submit', formHandler);
