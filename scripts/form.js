@@ -208,7 +208,7 @@ const formHandler = (e) => {
 	msgErrorName ? nameElement.innerText = msgErrorName : null;
 	msgErrorCountry ? countryElement.innerText = msgErrorCountry : null;
 	msgErrorCheckbox ? checkboxElement.innerText = msgErrorCheckbox : null;
-	msgErrorCaptcha ? captchaElement.innerText = msgErrorCheckbox : null;
+	msgErrorCaptcha ? captchaElement.innerText = msgErrorCaptcha : null;
 	const accountArr = [data.checkboxFirst, data.checkboxSecond];
 	let accountStr = accountArr.filter(item => item[1] === true);
 
