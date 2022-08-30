@@ -26,6 +26,7 @@ const refs = {
 	selectCustomTrigger: document.querySelector('.selectCustom-trigger'),
 	loader: document.querySelector('.loader'),
 	fakeButton: document.querySelector('.fake-btn'),
+
 }
 const translateModal = {
 	successFirstTitle: {
@@ -195,6 +196,8 @@ const formHandler = (e) => {
 		country: data.country,
 		account: accountStr,
 	}
+	const capcha = document.querySelector(".g-recaptcha-response");
+	console.log(capcha.value);
 	if (!msgErrorName && !msgErrorCountry && !msgErrorCheckbox) {
 		toggleLoader(true);
 		try {
