@@ -81,7 +81,31 @@ const extractData = (formElement) => {
 	const captcha = document.querySelector("#g-recaptcha-response").value;
 	return { name, email, country, checkboxFirst, checkboxSecond, captcha };
 }
-
+const formTimeRegulatorBefore = () => {
+	if (localStorage.getItem('times') === 3) {
+		const date = localStorage.getItem('time');
+		let currentDate = Date.parse(new Date());
+		let days = (currentDate - Date.parse(date)) / 86400000;
+		console.log(Math.round(days))
+		if (Math.round(days) <= 1) {
+			alert(`Ви вечерпали ліміт надсилання форм, ви знову змоежет надсилати через 24 год.`);
+			return false;
+		} else {
+			localStorage.setItem('times', 1);
+			localStorage.setItem('time', Date.parse(new Date()));
+		}
+		return true;
+	}
+}
+const formTimeRegulator = () => {
+	if (localStorage.getItem('times') === null) {
+		localStorage.setItem('times', 1);
+		localStorage.setItem('time', Date.parse(new Date()));
+		return;
+	}
+	const currentTimes = localStorage.getItem('times');
+	localStorage.setItem('times', Number(currentTimes) + 1);
+}
 const verifyName = (nameStr) => {
 	if (nameStr.length === 0) {
 		return hash === 'ua' ? 'Це поле не повинно бути пустим!' : 'This field must not be empty!';
@@ -138,6 +162,7 @@ const errorWindowOpen = (error) => {
 const successWindowOpen = (post) => {
 	refs.modalContent.innerHTML = '';
 	if (post.status === 200) {
+		formTimeRegulator();
 		refs.modalContent.innerHTML = getMurcup(true);
 		refs.modal.style.opacity = 1;
 	} else errorWindowOpen('error');
@@ -186,7 +211,9 @@ const fetchPostData = (postToAdd) => {
 		errorWindowOpen(error);
 	}
 }
+
 const formHandler = (e) => {
+	if (!formTimeRegulatorBefore()) return;
 	e.preventDefault();
 	const nameElement = document.querySelector('#name').querySelector('.error');
 	const emailElement = document.querySelector('#email').querySelector('.error');
