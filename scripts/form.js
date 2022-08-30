@@ -161,6 +161,26 @@ const cleanInputs = (form) => {
 	form[3].checked = false;
 	refs.selectCustomTrigger.innerText = DefaultValueSelectLang;
 }
+const fetchPostData = (postToAdd) => {
+	try {
+		fetch('https://global-ukraine-card.herokuapp.com/', {
+			method: 'POST',
+			body: JSON.stringify(postToAdd),
+			headers: {
+				'Content-Type': 'application/json; charset=UTF-8',
+			},
+		})
+			.then(response => response.json())
+			.then(post => successWindowOpen(post))
+			.catch(error => errorWindowOpen(error))
+			.finally(() => {
+				toggleLoader(false)
+				cleanInputs(element);
+			});;
+	} catch (e) {
+		errorWindowOpen(error);
+	}
+}
 const formHandler = (e) => {
 	e.preventDefault();
 	const nameElement = document.querySelector('#name').querySelector('.error');
@@ -196,28 +216,16 @@ const formHandler = (e) => {
 		country: data.country,
 		account: accountStr,
 	}
-	const capcha = document.querySelector(".g-recaptcha-response");
-	console.log(capcha.value);
 	if (!msgErrorName && !msgErrorCountry && !msgErrorCheckbox) {
 		toggleLoader(true);
-		try {
-			fetch('https://global-ukraine-card.herokuapp.com/', {
-				method: 'POST',
-				body: JSON.stringify(postToAdd),
-				headers: {
-					'Content-Type': 'application/json; charset=UTF-8',
-				},
-			})
-				.then(response => response.json())
-				.then(post => successWindowOpen(post))
-				.catch(error => errorWindowOpen(error))
-				.finally(() => {
-					toggleLoader(false)
-					cleanInputs(element);
-				});;
-		} catch (e) {
-			errorWindowOpen(error);
-		}
+		fetch('https://global-ukraine-card.herokuapp.com/captcha', {
+			method: 'POST',
+			header: {
+				'Accept': 'application/json, text/plain, */*',
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify({ captcha: document.querySelector("#g-recaptcha-response").value }),
+		}).then(res => res.json()).then(data => console.log(data))
 	}
 }
 
