@@ -64,7 +64,6 @@ const getSelectMurcup = () => {
 		return 0;
 	}
 	const arrMurcupSelectItem = hash === 'ua' ? allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.ua}</div>`) : allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.en}</div>`);
-	console.log(arrMurcupSelectItem);
 	return arrMurcupSelectItem.join("");
 }
 refs.selectCustomOptions.innerHTML = getSelectMurcup();
@@ -81,18 +80,25 @@ const extractData = (formElement) => {
 	const captcha = document.querySelector("#g-recaptcha-response").value;
 	return { name, email, country, checkboxFirst, checkboxSecond, captcha };
 }
+function getSecondsToday() {
+	let now = new Date();
+	let today = localStorage.getItem("time");
+
+	let diff = now - today;
+	const isDay = Math.round(diff / 1000 / 86400);
+	console.log(isDay);
+	if (isDay <= 1) return true;
+	return false;
+}
+
 const formTimeRegulatorBefore = () => {
-	if (localStorage.getItem('times') === 3) {
-		const date = localStorage.getItem('time');
-		let currentDate = Date.parse(new Date());
-		let days = (currentDate - Date.parse(date)) / 86400000;
-		console.log(Math.round(days))
-		if (Math.round(days) <= 1) {
+	if (localStorage.getItem('times') == 3) {
+		if (getSecondsToday()) {
 			alert(`Ви вечерпали ліміт надсилання форм, ви знову змоежет надсилати через 24 год.`);
 			return false;
 		} else {
 			localStorage.setItem('times', 1);
-			localStorage.setItem('time', Date.parse(new Date()));
+			localStorage.setItem('time', new Date());
 		}
 	}
 	return true;
@@ -100,7 +106,7 @@ const formTimeRegulatorBefore = () => {
 const formTimeRegulator = () => {
 	if (localStorage.getItem('times') === null) {
 		localStorage.setItem('times', 1);
-		localStorage.setItem('time', Date.parse(new Date()));
+		localStorage.setItem('time', new Date());
 		return;
 	}
 	const currentTimes = localStorage.getItem('times');
@@ -191,7 +197,7 @@ const cleanInputs = (form) => {
 	form[3].checked = false;
 	refs.selectCustomTrigger.innerText = DefaultValueSelectLang;
 }
-const fetchPostData = (postToAdd) => {
+const fetchPostData = (postToAdd, element) => {
 	try {
 		fetch('https://global-ukraine-card.herokuapp.com/', {
 			method: 'POST',
@@ -254,6 +260,7 @@ const formHandler = (e) => {
 		toggleLoader(true);
 
 		const captchaObj = { captcha: data.captcha }
+		fetchPostData(postToAdd, element);
 		fetch('https://global-ukraine-card.herokuapp.com/captcha/', {
 			method: 'POST',
 			body: JSON.stringify(captchaObj),
@@ -263,7 +270,7 @@ const formHandler = (e) => {
 		})
 			.then(response => response.json())
 			.then(post => {
-				post.success ? fetchPostData(postToAdd) : errorWindowOpen(post.msg);
+				post.success ? fetchPostData(postToAdd, element) : errorWindowOpen(post.msg);
 			}).catch(error => errorWindowOpen(error)).finally(() => {
 				toggleLoader(false)
 				cleanInputs(element);
