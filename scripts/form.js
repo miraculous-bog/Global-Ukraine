@@ -86,7 +86,6 @@ function getSecondsToday() {
 
 	let diff = now - today;
 	const isDay = Math.round(diff / 1000 / 86400);
-	console.log(isDay);
 	if (isDay <= 1) return true;
 	return false;
 }
@@ -220,7 +219,6 @@ const fetchPostData = (postToAdd, element) => {
 
 const formHandler = (e) => {
 	e.preventDefault();
-	console.log(formTimeRegulatorBefore());
 	if (!formTimeRegulatorBefore()) return;
 	const nameElement = document.querySelector('#name').querySelector('.error');
 	const emailElement = document.querySelector('#email').querySelector('.error');
