@@ -91,7 +91,7 @@ function getSecondsToday() {
 }
 
 const formTimeRegulatorBefore = () => {
-	if (localStorage.getItem('times') == 3) {
+	if (localStorage.getItem('times') >= 3) {
 		if (getSecondsToday()) {
 			alert(`Ви вечерпали ліміт надсилання форм, ви знову змоежет надсилати через 24 год.`);
 			return false;
@@ -258,7 +258,6 @@ const formHandler = (e) => {
 		toggleLoader(true);
 
 		const captchaObj = { captcha: data.captcha }
-		fetchPostData(postToAdd, element);
 		fetch('https://global-ukraine-card.herokuapp.com/captcha/', {
 			method: 'POST',
 			body: JSON.stringify(captchaObj),
