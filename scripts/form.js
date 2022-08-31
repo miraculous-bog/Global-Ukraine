@@ -94,8 +94,8 @@ const formTimeRegulatorBefore = () => {
 			localStorage.setItem('times', 1);
 			localStorage.setItem('time', Date.parse(new Date()));
 		}
-		return true;
 	}
+	return true;
 }
 const formTimeRegulator = () => {
 	if (localStorage.getItem('times') === null) {
@@ -213,8 +213,9 @@ const fetchPostData = (postToAdd) => {
 }
 
 const formHandler = (e) => {
-	if (!formTimeRegulatorBefore()) return;
 	e.preventDefault();
+	console.log(formTimeRegulatorBefore());
+	if (!formTimeRegulatorBefore()) return;
 	const nameElement = document.querySelector('#name').querySelector('.error');
 	const emailElement = document.querySelector('#email').querySelector('.error');
 	const countryElement = document.querySelector('#country').querySelector('.error');
