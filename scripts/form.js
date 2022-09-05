@@ -202,7 +202,7 @@ const cleanInputs = (form) => {
 }
 const fetchPostData = (postToAdd, element) => {
 	try {
-		fetch('http://localhost:3000/', {
+		fetch('https://global-ukraine-card.herokuapp.com/', {
 			method: 'POST',
 			body: JSON.stringify(postToAdd),
 			headers: {
@@ -262,7 +262,7 @@ const formHandler = (e) => {
 		toggleLoader(true);
 
 		const captchaObj = { captcha: data.captcha }
-		fetch('http://localhost:3000/captcha/', {
+		fetch('https://global-ukraine-card.herokuapp.com/captcha/', {
 			method: 'POST',
 			body: JSON.stringify(captchaObj),
 			headers: {
