@@ -194,7 +194,8 @@ body {
     height: 36px; } }
 
 .social-media-links__item {
-  display: inline-block; }
+  display: inline-block;
+  margin: 0 12px; }
 
 .social-media-links__img:hover {
   fill: #ffcb05; }
@@ -329,7 +330,8 @@ body {
     height: 46px; }
   .social-media-links__item {
     display: inline-block;
-    fill: #2f547d; }
+    fill: #2f547d;
+    margin: 12px 12px; }
   .main-title {
     font-size: 52px;
     text-align: center;
@@ -681,7 +683,20 @@ body {
       height: 40px;
       font-size: 36px; }
   .checkbox-text {
-    font-size: 24px; } }
+    font-size: 24px; }
+  .lng-form-title {
+    font-size: 32px; } }
+
+#captcha-container-custom-go {
+  margin-top: 40px; }
+
+@media (max-width: 369px) {
+  #captcha-container-custom-go {
+    max-width: 100%; }
+  .g-recaptcha iframe {
+    max-width: 250px !important; }
+  .g-recaptcha div {
+    max-width: 270px !important; } }
 
 .footer {
   display: flex;

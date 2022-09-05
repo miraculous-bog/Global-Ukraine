@@ -5,7 +5,9 @@ const DefaultValueSelectEn = 'Choose other country...';
 let hash = window.location.hash;
 hash = hash.substr(1);
 const inpName = document.querySelector('#name').querySelector('input');
-hash === 'ua' ? inpName.placeholder = 'Гліб Українець' : inpName.placeholder = 'Hlib Ukrainets';
+const inpEmail = document.querySelector('#email').querySelector('input');
+hash === 'ua' ? inpName.placeholder = `Введіть Ім'я та прізвище` : inpName.placeholder = 'Enter first name and last name';
+hash === 'ua' ? inpEmail.placeholder = `Введіть пошту` : inpEmail.placeholder = 'Enter your email';
 
 let DefaultValueSelectLang = '';
 hash === 'ua' ? DefaultValueSelectLang = DefaultValueSelectUa : DefaultValueSelectLang = DefaultValueSelectEn
@@ -30,12 +32,13 @@ const refs = {
 }
 const translateModal = {
 	successFirstTitle: {
-		ua: 'Ваші дані надіслані успішно!',
-		en: 'Your data has been sent successfully!',
+		ua: 'Дякуємо ! Ваші дані надіслані успішно !',
+		en: 'Thank you! Your data has been sent successfully!',
 	},
 	successSecondTitle: {
-		ua: 'Ми вам повідомимо, коли ви зможете замовити картку...',
-		en: 'We will let you know when you can order the card...',
+		ua: `Найближчим часом, ми повідомимо, коли Ви зможете замовити брендовану карту від Global Ukraine.
+		<br>Наша унікальна карта закодована на перемогу !`,
+		en: `In the near future, we will inform you when you can order a branded card from Global Ukraine.<br>Our unique card is coded for victory!`,
 	},
 	successATitle: {
 		ua: 'Завершити',
@@ -59,9 +62,10 @@ const getSelectMurcup = () => {
 	const customSortedFn = (a, b) => {
 		let nameA = a[`${hash}`].toLowerCase();
 		let nameB = b[`${hash}`].toLowerCase();
-		if (nameA < nameB) return -1;
-		if (nameA > nameB) return 1;
-		return 0;
+		// if (nameA < nameB) return -1;
+		// if (nameA > nameB) return 1;
+		// return 0;
+		return nameA.localeCompare(nameB);
 	}
 	const arrMurcupSelectItem = hash === 'ua' ? allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.ua}</div>`) : allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.en}</div>`);
 	return arrMurcupSelectItem.join("");
