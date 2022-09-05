@@ -4,7 +4,7 @@ const langArr = {
 		"en": "Ukrainians in Europe",
 	},
 	"possibility-text": {
-		"ua": "ВИ маєте надзвичайну можливість відкриття єврорахунок в Єврозоні - завдяки необанку Global Ukraine !",
+		"ua": "Ви маєте надзвичайну можливість відкриття єврорахунку в Єврозоні - завдяки необанку Global Ukraine !",
 		"en": "You have an extraordinary opportunity to open a euro account in the Eurozone - thanks to the neobank Global Ukraine!",
 	},
 	"main-btn-1": {
@@ -28,12 +28,12 @@ const langArr = {
 		"en": "Unique advantages",
 	},
 	"preferences-first-text": {
-		"ua": "Відкрити рахунок в Євро на основі українських документів",
-		"en": "Open an account in Euro based on Ukrainian documents",
+		"ua": "Відкрити Єврорахунок в Єврозоні на основі українських документів",
+		"en": "Open a Euro Account in the Eurozone based on Ukrainian documents",
 	},
 	"preferences-second-text": {
-		"ua": "Замовити банківську карту",
-		"en": "Order a European bank card",
+		"ua": "Замовити Європейську банківську карту з підтримкою українською мовою",
+		"en": "Order a European bank card with Ukrainian language support",
 	},
 	"preferences-third-text": {
 		"ua": "Забезпечити фінансову безпеку своїм рідним, які в Україні",
@@ -52,8 +52,8 @@ const langArr = {
 		"en": "Building bridges and supporting communities",
 	},
 	"investments-text": {
-		"ua": "Ми інвестуємо: для створення першого укр необанку. Половина прибутку необанку буде спрямована на підтримку та захист українських громад в світі!",
-		"en": "Global Ukraine works under the European license of EMI to create the first Ukrainian neobank in Europe, half of the profit of the neobank will be directed to the support and protection of Ukrainian communities in the world!",
+		"ua": "Ми інвестуємо: для створення першого українського необанку. Половина прибутку необанку буде спрямована на підтримку та захист українських громад в світі!",
+		"en": "Global Ukraine works under the European license of EMI to create the first Ukrainian neobank in Europe.<br>Half of the profit of the neobank will be directed to the support and protection of Ukrainian communities in the world!",
 	},
 	"form-title": {
 		"ua": "Зареєструватись",
