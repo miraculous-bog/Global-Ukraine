@@ -1,7 +1,7 @@
 
 const allowedNameCountry = [{ ua: 'Австрія', en: 'Austria' }, { ua: 'Бельгія', en: 'Belgium' }, { ua: 'Болгарія', en: 'Bulgaria' }, { ua: 'Хорватія', en: 'Croatia' }, { ua: 'Кіпр', en: 'Cyprus' }, { ua: 'Чехія', en: 'Czech Republic' }, { ua: 'Данія', en: 'Denmark' }, { ua: 'Естонія', en: 'Estonia' }, { ua: 'Фінляндія', en: 'Finland' }, { ua: 'Франція', en: 'France' }, { ua: 'Німеччина', en: 'Germany' }, { ua: 'Греція', en: 'Greece' }, { ua: 'Угорщина', en: 'Hungary' }, { ua: 'Ірландія', en: 'Ireland' }, { ua: 'Італія', en: 'Italy' }, { ua: 'Латвія', en: 'Latvia' }, { ua: 'Литва', en: 'Lithuania' }, { ua: 'Люксембург', en: 'Luxembourg' }, { ua: 'Мальта', en: 'Malta' }, { ua: 'Нідерланди', en: 'Netherlands' }, { ua: 'Польща', en: 'Poland' }, { ua: 'Португалія', en: 'Portugal' }, { ua: 'Румунія', en: 'Romania' }, { ua: 'Словаччина', en: 'Slovakia' }, { ua: 'Словенія', en: 'Slovenia' }, { ua: 'Іспанія', en: 'Spain' }, { ua: 'Швеція', en: 'Sweden' }, { ua: 'Україна', en: 'Ukraine' }, { ua: 'Ісландія', en: 'Sceland' }, { ua: 'Ліхтенштейн', en: 'Liechtenstein' }, { ua: 'Норвегія', en: 'Norway' }];
 const DefaultValueSelectUa = 'Вибрати країну...';
-const DefaultValueSelectEn = 'Choose other country...';
+const DefaultValueSelectEn = 'Choose country...';
 let hash = window.location.hash;
 hash = hash.substr(1);
 const inpName = document.querySelector('#name').querySelector('input');
