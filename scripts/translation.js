@@ -52,7 +52,7 @@ const langArr = {
 		"en": "Building bridges and supporting communities",
 	},
 	"investments-text": {
-		"ua": "Ми інвестуємо: для створення першого українського необанку. Половина прибутку необанку буде спрямована на підтримку та захист українських громад в світі!",
+		"ua": "Половина прибутку необанку буде спрямована на підтримку та захист українських громад в світі!",
 		"en": "Global Ukraine works under the European license of EMI to create the first Ukrainian neobank in Europe.<br>Half of the profit of the neobank will be directed to the support and protection of Ukrainian communities in the world!",
 	},
 	"form-title": {
