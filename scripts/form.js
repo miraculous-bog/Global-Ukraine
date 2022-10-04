@@ -62,9 +62,6 @@ const getSelectMurcup = () => {
 	const customSortedFn = (a, b) => {
 		let nameA = a[`${hash}`].toLowerCase();
 		let nameB = b[`${hash}`].toLowerCase();
-		// if (nameA < nameB) return -1;
-		// if (nameA > nameB) return 1;
-		// return 0;
 		return nameA.localeCompare(nameB);
 	}
 	const arrMurcupSelectItem = hash === 'ua' ? allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.ua}</div>`) : allowedNameCountry.sort(customSortedFn).map(item => `<div class="selectCustom-option">${item.en}</div>`);

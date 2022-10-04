@@ -68,8 +68,8 @@ const langArr = {
 		"en": "Corporate account ( FOP|PE)",
 	},
 	"footer": {
-		"ua": "Платіжні рахунки та дебетові картки Visa випускаються Global Ukraine у партнерстві з LinkCy Payment Service Provider UAB,<br> яка є Агентом Установи Електронних Грошей (LB001994), уповноваженою Банком Литви <br>здійснювати емісію електронних  гроші та відповідні платіжні послуги.",
-		"en": "Payment accounts and Visa debit cards are issued by Global Ukraine in partnership with LinkCy Payment Service Provider UAB,<br> which is an Agent of an Electronic Money Institution (LB001994), authorized by the Bank of Lithuania <br>for the issuing of electronic money and provision of the related payment services.",
+		"ua": "Карти Global Ukraine випускаються UAB PayrNet на підставі ліцензії Visa та управляються UAB LinkCy.<br>UAB PayrNet уповноважено Банком Литви відповідно до Закону про електронні гроші та установи електронних грошей (ref LB001994) для випуску електронних грошей і надання відповідних платіжних послуг.<br>UAB LinkCy є агентом UAB PayrNet, зареєстрованого в Банку Литви під номером 305756549.",
+		"en": "Global Ukraine Cards are issued by UAB PayrNet pursuant to a licence by Visa and managed by UAB LinkCy. <br>UAB PayrNet is authorised by the Bank of Lithuania under the Law on Electronic Money and Electronic Money Institutions (ref LB001994) for the issuing of electronic money and provision of the related payment services. <br>UAB LinkCy is an Agent of UAB PayrNet registered with the Bank of Lithuania under number 305756549.",
 	},
 }
 
