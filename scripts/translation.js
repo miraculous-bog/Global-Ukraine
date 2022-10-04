@@ -69,7 +69,7 @@ const langArr = {
 	},
 	"footer": {
 		"ua": "Карти Global Ukraine випускаються UAB PayrNet на підставі ліцензії Visa та управляються UAB LinkCy.<br>UAB PayrNet уповноважено Банком Литви відповідно до Закону про електронні гроші та установи електронних грошей (ref LB001994) для випуску електронних грошей і надання відповідних платіжних послуг.<br>UAB LinkCy є агентом UAB PayrNet, зареєстрованого в Банку Литви під номером 305756549.",
-		"en": "Global Ukraine Cards are issued by UAB PayrNet pursuant to a licence by Visa and managed by UAB LinkCy. <br>UAB PayrNet is authorised by the Bank of Lithuania under the Law on Electronic Money and Electronic Money Institutions (ref LB001994) for the issuing of electronic money and provision of the related payment services. <br>UAB LinkCy is an Agent of UAB PayrNet registered with the Bank of Lithuania under number 305756549.",
+		"en": "Global Ukraine Cards are issued by UAB PayrNet pursuant to a licence by Visa and managed by UAB LinkCy. <br>UAB PayrNet is authorised by the Bank of Lithuania under the Law on Electronic Money and Electronic Money Institutions (ref LB001994) <br>for the issuing of electronic money and provision of the related payment services. <br>UAB LinkCy is an Agent of UAB PayrNet registered with the Bank of Lithuania under number 305756549.",
 	},
 }
 
