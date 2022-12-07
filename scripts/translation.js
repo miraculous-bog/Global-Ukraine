@@ -81,7 +81,7 @@ const langArr = {
 	},
 	"take-fifth-text": {
 		"ua": "Замовте фізичну картку Global Ukraine VISA Debit (яку незабаром буде доставлено вам за вказаною європейською адресою). ",
-		"en": "Order your physical Global Ukraine VISA Debit card (which will soon be delivered to you aat the indicated European address).",
+		"en": "Order your physical Global Ukraine VISA Debit card (which will soon be delivered to you at the indicated European address).",
 	},
 	"chance-text": {
 		"ua": "Хочете бути в першій тисячі українців, котрі матимуть банківську карту Global Ukraine?",
@@ -97,7 +97,7 @@ const langArr = {
 	},
 	"form-title": {
 		"ua": "Завантажити картку Global Ukraine",
-		"en": "Download",
+		"en": `Download the application "Global Ukraine card"`,
 	},
 	"checkbox-first": {
 		"ua": "Індивідуальний рахунок (фізособа)",
