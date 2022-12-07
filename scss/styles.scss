@@ -329,7 +329,7 @@ body {
 
 .take-card__items {
 	@extend %flex-position;
-	flex-wrap: wrap;
+	// flex-wrap: wrap;
 	justify-content: space-around;
 	margin-top: 0px;
 	.take-card__img-container {

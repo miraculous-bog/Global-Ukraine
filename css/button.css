@@ -45,7 +45,12 @@
     animation: 1200ms ease 0s normal none 1 running shake;
     animation-iteration-count: infinite;
 }
-
+@media (max-width: 580px) {
+	.callback-bt {
+		right: 5%;
+		bottom: 5%;
+	}
+}
 .callback-bt .text-call:hover:after {
     opacity: 0;
 }

@@ -415,7 +415,6 @@ body {
     max-width: 500px; }
 
 .take-card__items {
-  flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 0px; }
   .take-card__items .take-card__img-container {

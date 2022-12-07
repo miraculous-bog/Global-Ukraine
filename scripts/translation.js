@@ -11,6 +11,10 @@ const langArr = {
 		"ua": "Оформити картку",
 		"en": "Get a card",
 	},
+	"call": {
+		"ua": "Служба<br>підтримки",
+		"en": "Helpdesk",
+	},
 	"main-btn-2": {
 		"ua": "Оформити картку",
 		"en": "Get a card",
@@ -77,7 +81,7 @@ const langArr = {
 	},
 	"take-fifth-text": {
 		"ua": "Замовте фізичну картку Global Ukraine VISA Debit (яку незабаром буде доставлено вам за вказаною європейською адресою). ",
-		"en": "Order your physical Global Ukraine VISA Debit card (which will soon be delivered to you at the European address indicated).",
+		"en": "Order your physical Global Ukraine VISA Debit card (which will soon be delivered to you aat the indicated European address).",
 	},
 	"chance-text": {
 		"ua": "Хочете бути в першій тисячі українців, котрі матимуть банківську карту Global Ukraine?",
@@ -92,7 +96,7 @@ const langArr = {
 		"en": "Global Ukraine works under the European license of EMI to create the first Ukrainian neobank in Europe.<br>Half of the profit of the neobank will be directed to the support and protection of Ukrainian communities in the world!",
 	},
 	"form-title": {
-		"ua": "Завантажити",
+		"ua": "Завантажити картку Global Ukraine",
 		"en": "Download",
 	},
 	"checkbox-first": {
@@ -104,7 +108,7 @@ const langArr = {
 		"en": "Corporate account ( FOP|PE)",
 	},
 	"suport-title": {
-		"ua": "Служба підтримки ",
+		"ua": "Служба підтримки",
 		"en": "Helpdesk",
 	},
 	"program-title": {
