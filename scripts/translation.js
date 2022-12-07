@@ -28,7 +28,7 @@ const langArr = {
 		"en": "For whom?",
 	},
 	"whom-first-text": {
-		"ua": "Українськи фопи в Європі, які працюють з Європейськими або міжнародними партнерами та прагнуть фінансової стабільності, без конверсійних комісій та обмежень національних банків.",
+		"ua": "Українські фопи в Європі, які працюють з Європейськими або міжнародними партнерами та прагнуть фінансової стабільності, без конверсійних комісій та обмежень національних банків.",
 		"en": "Ukrainian private entrepreneurs (FOPs) in Europe who work with European or international partners and seek financial stability, without conversion commissions and restrictions of national banks.",
 	},
 	"whom-second-text": {
@@ -75,7 +75,7 @@ const langArr = {
 		"ua": "Активуйте свою віртуальну картку Global Ukraine VISA Debit і почніть здійснювати перекази або робити покупки онлайн.",
 		"en": "Activate your virtual Global Ukraine VISA Debit card and start making transfers or shopping online.",
 	},
-	"take-fourth-text": {
+	"take-fifth-text": {
 		"ua": "Замовте фізичну картку Global Ukraine VISA Debit (яку незабаром буде доставлено вам за вказаною європейською адресою). ",
 		"en": "Order your physical Global Ukraine VISA Debit card (which will soon be delivered to you at the European address indicated).",
 	},
