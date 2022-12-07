@@ -258,7 +258,7 @@ body {
 
 .main-title {
   font-weight: 600;
-  font-size: 72px;
+  font-size: 55px;
   text-align: center;
   margin-top: 120px; }
 
@@ -268,10 +268,13 @@ body {
 
 .main-title::before {
   content: '';
-  border-left: 10px solid #5da9dd;
+  border-left: 7px solid #5da9dd;
   margin-right: 20px; }
 
 .social-media-links__list {
+  margin: 0px 0px; }
+
+.bottom-list {
   margin: 30px 0px; }
 
 .possibility {
@@ -333,12 +336,12 @@ body {
     fill: #2f547d;
     margin: 12px 12px; }
   .main-title {
-    font-size: 52px;
+    font-size: 42px;
     text-align: center;
     margin-top: 60px; }
   .main-title::before {
     content: '';
-    border-left: 7px solid #5da9dd;
+    border-left: 5px solid #5da9dd;
     margin-right: 10px; }
   .main-button {
     font-size: 20px;
@@ -378,7 +381,7 @@ body {
       max-width: 85%; }
     .preferences__items .preferences__items-block .preferences__items-block-text {
       color: #2f547d;
-      font-size: 36px;
+      font-size: 26px;
       text-align: center;
       font-weight: 600; }
 
@@ -403,7 +406,7 @@ body {
       max-width: 120%; }
     .preferences__items .preferences__items-block .preferences__items-block-text {
       margin-top: 20px;
-      font-size: 26px; } }
+      font-size: 20px; } }
 
 .take-card__img {
   display: flex;
@@ -418,16 +421,28 @@ body {
   .take-card__items .take-card__img-container {
     width: 50%; }
   .take-card__items .take-card__items-block {
+    position: relative;
     margin-top: 50px;
-    width: 290px;
-    padding: 20px;
-    border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 35px 6px rgba(93, 169, 221, 0.48);
-    -moz-box-shadow: 0px 0px 35px 6px rgba(93, 169, 221, 0.48);
-    box-shadow: 0px 0px 35px 6px rgba(93, 169, 221, 0.48); }
+    width: 240px;
+    padding: 20px; }
+    .take-card__items .take-card__items-block .take-card__items-block-img-num {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ffcb05;
+      text-align: center;
+      border-radius: 70%;
+      top: 5%;
+      right: 15%;
+      font-size: 20px;
+      font-weight: 600; }
+    .take-card__items .take-card__items-block .take-card__items-block-img-num p {
+      margin-top: 5px; }
     .take-card__items .take-card__items-block .take-card__items-block-img {
-      height: 230px;
-      background-image: url("../img/small-circle.png");
+      height: 180px;
+      background-image: url("../img/small-x-circle-blue.png");
       background-repeat: no-repeat;
       background-position: center center;
       display: flex;
@@ -435,10 +450,10 @@ body {
       justify-content: center; }
     .take-card__items .take-card__items-block .take-card__items-block-img img {
       margin: 0;
-      max-width: 85%; }
+      max-width: 45%; }
     .take-card__items .take-card__items-block .take-card__items-block-text {
       color: #2f547d;
-      font-size: 36px;
+      font-size: 26px;
       text-align: center;
       font-weight: 600; }
 
@@ -454,16 +469,20 @@ body {
 @media (max-width: 480px) {
   .take-card__items .take-card__items-block {
     width: 80%; }
+    .take-card__items .take-card__items-block .take-card__items-block-img-num {
+      position: static;
+      margin: 0 auto; }
     .take-card__items .take-card__items-block .take-card__items-block-img {
+      position: static;
       height: 120px;
       width: 120px;
-      margin: 0 auto;
+      margin: 20px auto;
       background-size: cover; }
     .take-card__items .take-card__items-block .take-card__items-block-img img {
       max-width: 120%; }
     .take-card__items .take-card__items-block .take-card__items-block-text {
       margin-top: 20px;
-      font-size: 26px; } }
+      font-size: 20px; } }
 
 @media (max-width: 750px) {
   .take-card__img .take-card__img-card {
@@ -579,12 +598,24 @@ body {
   display: flex;
   margin-top: 100px; }
 
+.marketplace-top {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  margin-top: 50px; }
+
 .marketplace {
   display: flex;
   width: 100%;
   justify-content: space-around;
   flex-direction: column;
   justify-items: center; }
+
+@media (max-width: 750px) {
+  .marketplace-top {
+    width: 100%;
+    justify-content: space-around;
+    justify-items: center; } }
 
 .marketplace__container-img {
   display: block;
@@ -619,7 +650,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 40px;
   text-align: center; }
 
 .footer p {
