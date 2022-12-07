@@ -32,7 +32,7 @@ const langArr = {
 		"en": "For whom?",
 	},
 	"whom-first-text": {
-		"ua": "Українські фопи в Європі, які працюють з Європейськими або міжнародними партнерами та прагнуть фінансової стабільності, без конверсійних комісій та обмежень національних банків.",
+		"ua": "Українські ФОПи в Європі, які працюють з Європейськими або міжнародними партнерами та прагнуть фінансової стабільності, без конверсійних комісій та обмежень національних банків.",
 		"en": "Ukrainian private entrepreneurs (FOPs) in Europe who work with European or international partners and seek financial stability, without conversion commissions and restrictions of national banks.",
 	},
 	"whom-second-text": {
