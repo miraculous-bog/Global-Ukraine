@@ -17,7 +17,20 @@
     -webkit-animation: hoverWave linear 1s infinite;
     animation: hoverWave linear 1s infinite;
 }
-
+.facebook {
+    content: url("../img/msg-f.png");
+    right: 8%;    
+}
+.telegram {
+    content: url("../img/telegram.png");
+    left: 8%;
+}
+.facebook:hover {
+    content: '';  
+}
+.telegram:hover {
+    content: '';
+}
 .callback-bt:hover {
     background: #fff;
     border: 2px solid #38a3fd;
@@ -31,7 +44,7 @@
 }
 
 .callback-bt .text-call:after {
-    content: url("../img/msg-f.png");
+    /* content: url("../img/msg-f.png"); */
     display: block;
     font-family: fontawesome;
     color: #fff;
@@ -47,9 +60,14 @@
 }
 @media (max-width: 580px) {
 	.callback-bt {
-		right: 5%;
 		bottom: 5%;
 	}
+    .facebook {
+        right: 5%;
+    }
+    .telegram {
+        left: 5%;
+    }
 }
 .callback-bt .text-call:hover:after {
     opacity: 0;
