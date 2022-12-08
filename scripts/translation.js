@@ -15,6 +15,10 @@ const langArr = {
 		"ua": "Служба<br>підтримки",
 		"en": "Helpdesk",
 	},
+	"call-tg": {
+		"ua": "Служба<br>підтримки",
+		"en": "Helpdesk",
+	},
 	"main-btn-2": {
 		"ua": "Оформити картку",
 		"en": "Get a card",
