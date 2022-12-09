@@ -60,8 +60,8 @@ const langArr = {
 		"en": "Order a European bank card with Ukrainian language support",
 	},
 	"preferences-third-text": {
-		"ua": "Забезпечити фінансову безпеку своїм рідним, які в Україні",
-		"en": "Provide financial security to your relatives in Ukraine",
+		"ua": "Безкоштовні та безлімітні перекази між власниками карти Global Ukraine (незалежно від країни проживання).",
+		"en": "Free and unlimited transfers between Global Ukraine card holders (regardless of the country of residence)",
 	},
 	"take-title": {
 		"ua": "Як отримати рахунок та картку Global Ukraine?",
