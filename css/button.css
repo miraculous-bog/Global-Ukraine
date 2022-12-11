@@ -4,6 +4,7 @@
     border-radius: 50%;
     box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3);
     cursor: pointer;
+    content: url("../img/support.png");
     border: 2px solid transparent;
     display: block;
     height: 75px;
@@ -17,23 +18,10 @@
     -webkit-animation: hoverWave linear 1s infinite;
     animation: hoverWave linear 1s infinite;
 }
-.facebook {
-    content: url("../img/msg-f.png");
-    right: 8%;    
-}
-.telegram {
-    content: url("../img/telegram.png");
-    left: 8%;
-}
-.facebook:hover {
-    content: '';  
-}
-.telegram:hover {
-    content: '';
-}
 .callback-bt:hover {
     background: #fff;
     border: 2px solid #38a3fd;
+    content: ''; 
 }
 
 .callback-bt .text-call {
@@ -62,12 +50,6 @@
 	.callback-bt {
 		bottom: 5%;
 	}
-    .facebook {
-        right: 5%;
-    }
-    .telegram {
-        left: 5%;
-    }
 }
 .callback-bt .text-call:hover:after {
     opacity: 0;
@@ -92,7 +74,9 @@
 .callback-bt .text-call:hover span {
     opacity: 1;
 }
-
+.support-bar:hover .callback-bt{
+    content: '';
+}
 @keyframes hoverWave {
     0% {
         box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 0 rgba(56, 163, 253, 0.2), 0 0 0 0 rgba(56, 163, 253, 0.2)

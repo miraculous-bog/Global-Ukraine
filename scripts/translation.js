@@ -134,6 +134,14 @@ const langArr = {
 	"terms-use": {
 		"ua": "Пропозиції, тарифи та умови використання",
 		"en": "Offers, tarifs and terms of use",
+	},
+	"back": {
+		"ua": "Назад",
+		"en": "Back",
+	},
+	"back-title": {
+		"ua": "Служба підтримки",
+		"en": "Helpdesk",
 	}
 }
 
