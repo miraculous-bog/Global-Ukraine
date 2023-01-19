@@ -15,6 +15,10 @@ const langArr = {
 		"ua": "Відкрийте рахунок в Європі для вашого ФОПа на Українські документи. Користуйтесь перші 15 днів БЕЗКОШТОВНО.",
 		"en": "Open an account in Europe for your FOP on Ukrainian documents. Use the first 15 days for FREE.",
 	},
+	"mainSlide-sale": {
+		"ua": "Безкоштовний пробний період - 15 днів",
+		"en": "Try our 15-day free trial!",
+	},
 	"animationAction-title": {
 		"ua": "Почніть користуватися зараз!",
 		"en": "Let’s get started now!",
